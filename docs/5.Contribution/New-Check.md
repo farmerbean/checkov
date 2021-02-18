@@ -91,11 +91,13 @@ Notice that checks are divided first into folders grouped by their type, and are
 ### Review IaC configuration documentation
 
 If available, please provide the official IaC supporting documentation -
-    *[arm](https://docs.microsoft.com/en-us/azure/templates/)
-    *[CloudFormation](https://docs.aws.amazon.com/cloudformation/)
-    *[Kubernetes](https://https://kubernetes.io/docs/home/)
-    *[serverless](https://www.serverless.com/framework/docs/providers/)
-    *[Terraform](https://www.terraform.io/docs)
+
+* [arm](https://docs.microsoft.com/en-us/azure/templates/)
+* [CloudFormation](https://docs.aws.amazon.com/cloudformation/)
+* [Kubernetes](https://https://kubernetes.io/docs/home/)
+* [serverless](https://www.serverless.com/framework/docs/providers/)
+* [Terraform](https://www.terraform.io/docs)
+
 This helps users to better understand the check's scanned configuration and it's usage.
 
 For example, a "Terraform check for an S3 bucket configuration" can be found [here](https://www.terraform.io/docs/providers/aws/r/s3_bucket.html) 
