@@ -73,12 +73,12 @@ Additionally, a check can be suppressed by Checkov on a given configuration by i
 Read more about Checkov's [Suppressions](../3.Scans/resource-scans.md) for further details.
 
 ## IaC type scanner
-Identify which IaC type would be tested under the check. currently, Checkov scans either Terraform or CloudFormation configuration files.
-Place your following code under `checkov/<scanner>` folder, where `<scanner>` is either `terraform` or `cloudformation`. 
+Identify which IaC type would be tested under the check. Checkov scans: arm, CloudFormation, Kubernetes, serverless, or Terraform configuration files.
+Place your following code under `checkov/<scanner>` folder, where `<scanner>` is one of `arm`, `cloudformation`, `kubernetes`, `serverless`, or `terraform`. 
 
 ### Check type and provider
 
-Checks are divided first to folders grouped by their type, and are after divided by their provider.
+Checks are divided in folders grouped by type, then by provider.
 
 Checks should relate to a common IaC configuration type of a specific public cloud provider. 
 For example, a check that validates the encryption configuration of an S3 bucket is considered to be of type `resource`, and of `aws` provider. 
@@ -90,9 +90,15 @@ Notice that checks are divided first into folders grouped by their type, and are
 
 ### Review IaC configuration documentation
 
-If available, please provide the official [Terraform](https://www.terraform.io/docs) or [CloudFormation](https://docs.aws.amazon.com/cloudformation/) documentation of the checked configuration. This helps users to better understand the check's scanned configuration and it's usage.
+If available, please provide the official IaC supporting documentation -
+    *[arm](https://docs.microsoft.com/en-us/azure/templates/)
+    *[CloudFormation](https://docs.aws.amazon.com/cloudformation/)
+    *[Kubernetes](https://https://kubernetes.io/docs/home/)
+    *[serverless](https://www.serverless.com/framework/docs/providers/)
+    *[Terraform](https://www.terraform.io/docs)
+This helps users to better understand the check's scanned configuration and it's usage.
 
-For example, the mentioned above check's configuration documentation can be found [here](https://www.terraform.io/docs/providers/aws/r/s3_bucket.html) 
+For example, a "Terraform check for an S3 bucket configuration" can be found [here](https://www.terraform.io/docs/providers/aws/r/s3_bucket.html) 
 
 ### Example IaC configuration
 
