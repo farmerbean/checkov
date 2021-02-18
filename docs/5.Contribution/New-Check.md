@@ -28,7 +28,7 @@ This guide covers all the necessary stages required to building and contributing
     * Read about check's structure and functionality in the [Prerequisites](#prerequisites) section.
     * Identify the check's `type` and `provider`, as described [here](#check-structure). 
     * If available, provide the IaC configuration documentation that relates to the check, as described [here](#review-iac-configuration-documentation).
-    * Provide an example Terraform or CloudFormation configuration file, as described [here](#example-Terraform-configuration). 
+    * Provide an example Terraform or CloudFormation configuration file, as described [here](#example-iac-configuration). 
 2. Implementation
     * Implement the check as described in the [Implementation](#implementation) section.
 3. Testing
@@ -100,16 +100,13 @@ If available, please provide the official IaC supporting documentation -
 
 This helps users to better understand the check's scanned configuration and it's usage.
 
-For example, a "Terraform check for an S3 bucket configuration" can be found [here](https://www.terraform.io/docs/providers/aws/r/s3_bucket.html) 
+For example, a "Terraform check for an S3 bucket configuration" can be found [here](https://www.terraform.io/docs/providers/aws/r/s3_bucket.html)
 
 ### Example IaC configuration
 
 In order to develop the check, a relevant example configuration should be presented as an input to Checkov.
-Provide an example configuration (e.g. `example.tf, template.json`) that contains both passing and failing configurations with respect to 
-the check's logic.
-The file can be served as an input to the appropriate check's unit tests. 
-
-
+Provide an example configuration (e.g. `example.tf, template.json`) that contains both passing and failing configurations with respect to the check's logic.
+The file can be served as an input to the appropriate check's unit tests.
 
 ## Implementation
 
@@ -123,7 +120,6 @@ For example, all checks of `resource` type and `aws` provider are implementing t
 
 For a full implementation example of a check, please refer the [Policies documentation](../1.Introduction/Policies.md).
 
-
 ## Testing
 
 Assuming the implemented check's class is file is found in `checkov/terraform/checks/<type>/<provider>` directory, named `<ClassName>.py`, create an appropriate unit test file in `tests/terraform/checks/<type>/<provider>` directory, named `test_<ClassName>.py`.
@@ -131,4 +127,3 @@ Assuming the implemented check's class is file is found in `checkov/terraform/ch
 The test suite should cover different check results; Test if the check outputs `PASSED` on a compliant configuration,
 and test if it output `FAILED` on a non-compliant configuration. You are also encouraged to test more specific 
 components of the check, according to their complexity.
-
